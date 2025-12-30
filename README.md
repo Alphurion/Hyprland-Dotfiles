@@ -3,6 +3,7 @@ Welcome to Alph's Dotfiles. A basic cookie cutter arch install with none of thos
 
 ```console
 git clone https://github.com/Alphurion/Hyprland-Dotfiles.git
+cd Hyprland-Dotfiles
 chmod +x install.sh
 ./install.sh
 ```
