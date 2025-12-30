@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Welcome to Alph's Dotfiles!\n Have you installed Dotfiles before? (Y/n)"
-
+sleep 10
 sudo pacman -S dolphin
 sudo pacman -S dunst
 sudo pacman -S grim
