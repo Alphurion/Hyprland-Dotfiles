@@ -1,29 +1,26 @@
 #!/bin/bash
 
-echo "Welcome to Alph's Dotfiles!\n Have you installed Dotfiles before? (Y/n)"
+echo "Welcome to Alph's Dotfiles!"
+echo "Have you installed Dotfiles before? (Y/n)"
 
-read ans
-if($ans -eq n)
-exit 1
+if [[ "$ans" =~ ^[Nn]$ ]]; then
+    exit 1
+fi
 
-sudo pacman -S dolphin
-sudo pacman -S dunst
-sudo pacman -S grim
-sudo pacman -S hyprland
-sudo pacman -S kitty
-sudo pacman -S polkit-kde-agent
-sudo pacman -S qt5-wayland
-sudo pacman -S qt6-wayland
-sudo pacman -S slurp
-sudo pacman -S uwsm
-sudo pacman -S wofi
-sudo pacman -S xdg-desktop-portal-hyprland
+
+sudo pacman -S --needed \
+  dolphin dunst grim hyprland kitty polkit-kde-agent \
+  qt5-wayland qt6-wayland slurp uwsm wofi \
+  xdg-desktop-portal-hyprland
+
 
 	#Keybind Config
 
-cd Hyprland-dotfiles
+cd Hyprland-dotfiles || exit 1
 rm ~/.config/hypr/hyprland.conf
-cp Hyprland-dotfiles ~/hypr/
+mkdir -p ~/.config/hypr
+cp -r Hyprland-dotfiles/* ~/.config/hypr/
+
 
 	#Waybar Config
 
@@ -31,8 +28,7 @@ fc-list | grep -i nerd
 sudo pacman -S ttf-jetbrains-mono-nerd
 
 	#Keybind Config
-
-
+	
 
 	#Hyprpaper Config
 
@@ -43,8 +39,10 @@ sudo pacman -S hyprpaper
 sudo pacman -S blueman bluez bluez-utils
 echo "Do you wan to reboot (Y/n)"
 read ans
-if($ans -eq n)
-exit 0
-elif
-reboot
+if [[ "$ans" =~ ^[Nn]$ ]]; then
+    exit 0
+else
+    reboot
+fi
+
 
