@@ -1,7 +1,19 @@
 #!/bin/bash
 
-echo "Welcome to Alph's Dotfiles!"
+echo "Welcome to Alph's Dotfiles!\n Have you installed Dotfiles before? (Y/n)"
 
+sudo pacman -S dolphin
+sudo pacman -S dunst
+sudo pacman -S grim
+sudo pacman -S hyprland
+sudo pacman -S kitty
+sudo pacman -S polkit-kde-agent
+sudo pacman -S qt5-wayland
+sudo pacman -S qt6-wayland
+sudo pacman -S slurp
+sudo pacman -S uwsm
+sudo pacman -S wofi
+sudo pacman -S xdg-desktop-portal-hyprland
 
 	#Keybind Config
 
