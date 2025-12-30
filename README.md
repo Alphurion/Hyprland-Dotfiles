@@ -11,7 +11,11 @@ chmod +x install.sh
 Shortcuts
 
 Super + Q = Quit Program
+
 Super + W = Open Kitty
+
 Super + E = Open Dolphin (files)
+
 Super + R = Menu
+
 Super + T = Toggle Float
