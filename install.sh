@@ -1,7 +1,11 @@
 #!/bin/bash
 
 echo "Welcome to Alph's Dotfiles!\n Have you installed Dotfiles before? (Y/n)"
-sleep 10
+
+read ans
+if($ans -eq n)
+exit 1
+
 sudo pacman -S dolphin
 sudo pacman -S dunst
 sudo pacman -S grim
@@ -37,5 +41,10 @@ sudo pacman -S hyprpaper
 	#Audio Config
 
 sudo pacman -S blueman bluez bluez-utils
-
+echo "Do you wan to reboot (Y/n)"
+read ans
+if($ans -eq n)
 exit 0
+elif
+reboot
+
