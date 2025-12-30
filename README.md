@@ -20,3 +20,13 @@ Super + E = Open Dolphin (files)
 Super + R = Menu
 
 Super + T = Toggle Float
+
+
+```console
+TO DO
+```
+* Make directory for hyprpaper and shell for change wallpapers
+* Add wallpaper library
+* Startup program open sheet
+* Emacs customization
+* Automatic darkmode config
