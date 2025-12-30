@@ -11,7 +11,7 @@ fi
 sudo pacman -S --needed \
   dolphin dunst grim hyprland kitty polkit-kde-agent \
   qt5-wayland qt6-wayland slurp uwsm wofi \
-  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-hyprland hyprpaper hyprctl
 
 
 	#Keybind Config
@@ -19,6 +19,7 @@ sudo pacman -S --needed \
 cd Hyprland-dotfiles || exit 1
 rm ~/.config/hypr/hyprland.conf
 mkdir -p ~/.config/hypr
+mkdir ~/Wallpapers
 cp -r Hyprland-dotfiles/* ~/.config/hypr/
 
 
@@ -31,7 +32,6 @@ sudo pacman -S ttf-jetbrains-mono-nerd
 	
 
 	#Hyprpaper Config
-
 sudo pacman -S hyprpaper
 
 	#Audio Config
