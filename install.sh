@@ -1,21 +1,29 @@
-#Install script for Alph's Dotfiles
+#!/bin/bash
+
+echo "Welcome to Alph's Dotfiles!"
 
 
-	#Create dir environment
+	#Keybind Config
 
+cd Hyprland-dotfiles
+rm ~/.config/hypr/hyprland.conf
+cp Hyprland-dotfiles ~/hypr/
 
 	#Waybar Config
 
 fc-list | grep -i nerd
 sudo pacman -S ttf-jetbrains-mono-nerd
 
-git clone https://github.com/soaddevgit/WaybarTheme.git
-cp WaybarTheme/* ~/.config/waybar/
-
 	#Keybind Config
+
 
 
 	#Hyprpaper Config
 
 sudo pacman -S hyprpaper
 
+	#Audio Config
+
+sudo pacman -S blueman bluez bluez-utils
+
+exit 0
