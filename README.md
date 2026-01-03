@@ -27,7 +27,7 @@ Super + Y = Create Waybar
 Super + M = Disable Keybinds
 
 
-#To-Do
+# To-Do
 * Make directory for hyprpaper and shell for change wallpapers
 * Add wallpaper library
 * Startup program open sheet
