@@ -27,14 +27,10 @@ Super + Y = Create Waybar
 Super + M = Disable Keybinds
 
 
-```console
-TO DO
-```
+#To-Do
 * Make directory for hyprpaper and shell for change wallpapers
 * Add wallpaper library
 * Startup program open sheet
 * Emacs customization
 * Automatic darkmode config
 * Reload Waybar bind# Hyprland-Dotfiles
-# Hyprland-Dotfiles
-# Hyprland-Dotfiles
