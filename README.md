@@ -36,3 +36,5 @@ TO DO
 * Emacs customization
 * Automatic darkmode config
 * Reload Waybar bind# Hyprland-Dotfiles
+# Hyprland-Dotfiles
+# Hyprland-Dotfiles
