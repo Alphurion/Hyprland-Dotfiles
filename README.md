@@ -35,4 +35,4 @@ TO DO
 * Startup program open sheet
 * Emacs customization
 * Automatic darkmode config
-* Reload Waybar bind
+* Reload Waybar bind# Hyprland-Dotfiles
