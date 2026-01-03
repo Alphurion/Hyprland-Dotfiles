@@ -11,7 +11,7 @@ fi
 sudo pacman -S --needed \
   dolphin dunst grim hyprland kitty polkit-kde-agent \
   qt5-wayland qt6-wayland slurp uwsm wofi \
-  xdg-desktop-portal-hyprland hyprpaper hyprctl
+  xdg-desktop-portal-hyprland hyprctl
 
 
 	#Keybind Config

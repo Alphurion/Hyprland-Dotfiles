@@ -1,6 +1,7 @@
 # Hyprland-Dotfiles
-Welcome to Alph's Dotfiles. A basic cookie cutter arch install with none of those fancy schmancy extra weird keybinds and stuff you don't use.
+Welcome to Alph's Dotfiles. A preconfigured setup that immediately allows you to start using your computer without needing to constantly fix basic functionality. Personally I like to experiment with setups, but none of them felt quite right, so I wanted to make a default setup which is easily customizable and not too invasive.
 
+Here is how to install the dotfiles!
 ```console
 git clone https://github.com/Alphurion/Hyprland-Dotfiles.git
 cd Hyprland-Dotfiles
@@ -21,6 +22,10 @@ Super + R = Menu
 
 Super + T = Toggle Float
 
+Super + Y = Create Waybar
+
+Super + M = Disable Keybinds
+
 
 ```console
 TO DO
@@ -30,3 +35,4 @@ TO DO
 * Startup program open sheet
 * Emacs customization
 * Automatic darkmode config
+* Reload Waybar bind
