@@ -28,9 +28,8 @@ Super + M = Disable Keybinds
 
 
 # To-Do
-* Make directory for hyprpaper and shell for change wallpapers
-* Add wallpaper library
+* Make shell for changing wallpapers
 * Startup program open sheet
 * Emacs customization
-* Automatic darkmode config
-* Reload Waybar bind# Hyprland-Dotfiles
+* add GTK menus
+
