@@ -7,32 +7,12 @@ if [[ "$ans" =~ ^[Nn]$ ]]; then
     exit 1
 fi
 
+workingDir = $pwd
 
 sudo pacman -S python
 python script.py
 
-	#Keybind Config
 
-cd Hyprland-dotfiles || exit 1
-rm ~/.config/hypr/hyprland.conf
-mkdir -p ~/.config/hypr
-mkdir ~/Wallpapers
-cp -r Hyprland-dotfiles/* ~/.config/hypr/
-
-	#Waybar Config
-
-fc-list | grep -i nerd
-sudo pacman -S ttf-jetbrains-mono-nerd
-
-	#Keybind Config
-
-
-	#Hyprpaper Config
-sudo pacman -S hyprpaper
-
-	#Audio Config
-
-sudo pacman -S blueman bluez bluez-utils
 echo "Do you wan to reboot (Y/n)"
 read ans
 if [[ "$ans" =~ ^[Nn]$ ]]; then
