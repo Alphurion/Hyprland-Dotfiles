@@ -7,9 +7,9 @@ if [[ "$ans" =~ ^[Nn]$ ]]; then
     exit 1
 fi
 
-workingDir = $pwd
+Working_Dir = $pwd
 sudo pacman -S python
-python3 script.py
+python3 script.py Working_Dir
 
 
 echo "Do you wan to reboot (Y/n)"
