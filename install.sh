@@ -10,7 +10,7 @@ fi
 workingDir = $pwd
 
 sudo pacman -S python
-python script.py
+python3 script.py
 
 
 echo "Do you wan to reboot (Y/n)"
