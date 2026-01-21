@@ -28,7 +28,7 @@ Super + M = Disable Keybinds
 
 
 # To-Do
-** add GTK menus (Shortcuts, )
+* Create Quickshell GUI
 * Emacs customization
 
 
