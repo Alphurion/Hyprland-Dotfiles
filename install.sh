@@ -1,16 +1,15 @@
 #!/bin/bash
 
 echo "Welcome to Alph's Dotfiles!"
-echo "Have you installed Dotfiles before? (Y/n)"
+echo "This script requires python to work, do you wish to install python? [Y/n]"
 
 if [[ "$ans" =~ ^[Nn]$ ]]; then
     exit 1
 fi
 
-workingDir = $pwd
-
+Working_Dir = $pwd
 sudo pacman -S python
-python script.py
+python3 script.py Working_Dir
 
 
 echo "Do you wan to reboot (Y/n)"

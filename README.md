@@ -28,9 +28,7 @@ Super + M = Disable Keybinds
 
 
 # To-Do
-* Make shell for changing wallpapers
-* Startup program open sheet
+** add GTK menus (Shortcuts, )
 * Emacs customization
-* add GTK menus (Shortcuts, )
 
 
