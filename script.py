@@ -66,13 +66,6 @@ if not bash("command -v pipewire") and not bash("command -v pulseaudio"):
 subprocess.run(['echo', 'Installing Bluetooth...'])
 bash("sudo pacman -S blueman bluez bluez-utils")
 
-subprocess.run(['echo', 'This Dotfiles uses Quickshell to make UI elements. Do you wish to install there? [Y,n] (WARNING: ONLY DO THIS IF YOU KNOW WHAT YOU ARE DOING)'])
-user_input = input()
-
-if [user_input == "Y" or user_input == "y"]:
-    Install_Program(quickshell)
-
-
     
 #----- Functions -----#
 
