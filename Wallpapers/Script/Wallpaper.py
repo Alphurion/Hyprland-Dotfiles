@@ -14,12 +14,8 @@ Dark_Count = Wallpaper_Counter(Dark_Folder)
 Light_Count = Wallpaper_Counter(Light_Folder)
 
 def Random_Wallpaper(Monitor):
-    if Dark_Count == Light_Count:
-        winner = random.choice([True, False])
-    elif Dark_Count > Light_Count:
-        winner = False
-    else:
-        winner = True
+   
+    winner = random.choice([True, False])
 
     if winner:
         choice = random.randint(1, Light_Count)
@@ -29,5 +25,4 @@ def Random_Wallpaper(Monitor):
         string = f"{Monitor},{Dark_Folder}/{choice}.png"
     subprocess.run(["hyprctl", "hyprpaper", "wallpaper", string])
 
-Random_Wallpaper("DP-2")
 Random_Wallpaper("DP-3")
