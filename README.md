@@ -28,8 +28,7 @@ Super + M = Disable Keybinds
 
 
 # To-Do
-* Startup program open sheet
+** add GTK menus (Shortcuts, )
 * Emacs customization
-* add GTK menus (Shortcuts, )
 
 
