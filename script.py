@@ -2,6 +2,19 @@ import subprocess
 import shlex
 import os
 
+#----- Functions -----#
+
+def Install_Program(program):
+    subprocess.run(['sudo', 'pacman', '-S', '--noconfirm', program])
+
+def Save_Configuration(program, saveConfig):
+    print(program, "appears to have configurations, do you wish to save them?[Y, n]")
+    user_input = input()
+
+def bash(command):
+    args = shlex.split(command)
+    subprocess.run(args)
+    
 #----- Variables -----#
 
 tips = False
@@ -65,17 +78,3 @@ if not bash("command -v pipewire") and not bash("command -v pulseaudio"):
 
 subprocess.run(['echo', 'Installing Bluetooth...'])
 bash("sudo pacman -S blueman bluez bluez-utils")
-
-    
-#----- Functions -----#
-
-def Install_Program(program):
-    subprocess.run(['sudo', 'pacman', '-S', '--noconfirm', program])
-
-def Save_Configuration(program, saveConfig):
-    print(program, "appears to have configurations, do you wish to save them?[Y, n]")
-    user_input = input()
-
-def bash(command):
-    args = shlex.split(command)
-    subprocess.run(args)
