@@ -12,7 +12,7 @@ sudo pacman -S python
 python3 script.py Working_Dir
 
 
-echo "Do you wan to reboot (Y/n)"
+echo "Do you want to reboot (Y/n)"
 read ans
 if [[ "$ans" =~ ^[Nn]$ ]]; then
     exit 0
