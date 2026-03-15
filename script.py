@@ -1,33 +1,57 @@
 import subprocess
 import shlex
 import os
+import shutil
 
-#----- Functions -----#
+# ----- Functions ----- #
 
-def Install_Program(program):
-    subprocess.run(['sudo', 'pacman', '-S', '--noconfirm', program])
+def install_program(program):
+    subprocess.run(["sudo", "pacman", "-S", "--noconfirm", program])
 
-def Save_Configuration(program, saveConfig):
-    print(program, "appears to have configurations, do you wish to save them?[Y, n]")
-    user_input = input()
 
 def bash(command):
     args = shlex.split(command)
-    subprocess.run(args)
-    
-#----- Variables -----#
+    return subprocess.run(args)
 
-tips = False
-saveConfig = True
-mainPath = " "
-# Text
-title = """ 
+
+def command_exists(cmd):
+    return subprocess.run(["which", cmd], stdout=subprocess.DEVNULL).returncode == 0
+
+
+def install_configs():
+    repo_path = os.getcwd()
+    config_path = os.path.expanduser("~/.config")
+
+    os.makedirs(config_path, exist_ok=True)
+
+    configs = [
+        "hypr",
+        "kitty",
+        "dunst",
+        "wofi",
+        "waybar"
+    ]
+
+    for cfg in configs:
+        src = os.path.join(repo_path, cfg)
+        dst = os.path.join(config_path, cfg)
+
+        if os.path.exists(src):
+            print(f"Installing {cfg} config...")
+
+            if os.path.exists(dst):
+                shutil.rmtree(dst)
+
+            shutil.copytree(src, dst)
+
+# ----- Variables ----- #
+
+title = """
 ▄▖▜   ▌ ▌    ▖▖      ▜      ▌  ▄   ▗   
 ▌▌▐ ▛▌▛▌ ▛▘  ▙▌▌▌▛▌▛▘▐ ▀▌▛▌▛▌  ▌▌▛▌▜▘▛▘
 ▛▌▐▖▙▌▌▌ ▄▌  ▌▌▙▌▙▌▌ ▐▖█▌▌▌▙▌  ▙▘▙▌▐▖▄▌
     ▌          ▄▌▌                     
 """
-# Program
 
 installs = [
     "dolphin",
@@ -41,40 +65,46 @@ installs = [
     "slurp",
     "uwsm",
     "wofi",
+    "waybar",
     "xdg-desktop-portal-hyprland",
-    "hyprctl",
     "noto-fonts",
     "noto-fonts-cjk",
     "noto-fonts-emoji",
     "ttf-jetbrains-mono-nerd"
 ]
 
+# ----- Begin program ----- #
 
-#----- Begin program -----#
+print(title)
+print("Installing Hyprland dotfiles...")
 
-
-print(title, "\n Have you installed these dotfiles before? [Y,n]")
-user_input = input()
-
-if [user_input != "n"]:
-    user_input = "Y"
-
-if [user_input == "Y"]:
-    tips = True
-
-user_input = " "
-#Installing basic hyprland
+# Install packages
 for program in installs:
-    Install_Program(program)
+    install_program(program)
 
-# Wallpaper
-bash("chmod +x /scripts/wallpaper.sh")
-bash("./wallpaper.sh")
+# Install configs
+install_configs()
 
-# Audio setup
-if not bash("command -v pipewire") and not bash("command -v pulseaudio"):
-    print("It appears you do not have any audio software installed, would you like to use (1) Pipewire or (2) Pulseaudio")
-    user_input = input("> ")
+# Wallpaper script
+wallpaper_script = os.path.join(os.getcwd(), "scripts", "wallpaper.sh")
 
-subprocess.run(['echo', 'Installing Bluetooth...'])
-bash("sudo pacman -S blueman bluez bluez-utils")
+if os.path.exists(wallpaper_script):
+    bash(f"chmod +x {wallpaper_script}")
+    bash(wallpaper_script)
+
+# Audio
+if not command_exists("pipewire") and not command_exists("pulseaudio"):
+    print("No audio system found.")
+    print("Install (1) PipeWire or (2) PulseAudio?")
+    choice = input("> ")
+
+    if choice == "1":
+        bash("sudo pacman -S --noconfirm pipewire pipewire-pulse wireplumber")
+    else:
+        bash("sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa")
+
+# Bluetooth
+print("Installing Bluetooth...")
+bash("sudo pacman -S --noconfirm blueman bluez bluez-utils")
+
+print("Installation complete.")
