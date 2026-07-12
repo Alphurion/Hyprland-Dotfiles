@@ -7,7 +7,6 @@
 alias reload='source ~/.bashrc'   # or ~/.zshrc if you use zsh
 
 PS1='[\u@\h \W]\$ '
-export PATH=/home/alph/.local/bin:$PATH
 
 ex () {
   if [ -f $1 ] ; then
