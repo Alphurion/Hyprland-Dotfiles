@@ -1,0 +1,16 @@
+Super + Q = Quit Program
+Super + W = Open Kitty
+Super + E = Open Dolphin (files)
+Super + R = Menu
+Super + T = Toggle Float
+Super + Y = Create Waybar
+
+Super + A = Random Wallpaper
+Super + S = Screenshot
+Super + D = Screenshot
+Super + F = Firefox
+Super + G = Emacs
+
+
+Super + N = Update and Shutdown
+Super + M = Disable Keybinds
