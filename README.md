@@ -11,23 +11,7 @@ cd Hyprland-Dotfiles
 chmod +x install.sh
 ./install.sh
 ```
-
-
-Shortcuts
-
-Super + Q = Quit Program
-
-Super + W = Open Kitty
-
-Super + E = Open Dolphin (files)
-
-Super + R = Menu
-
-Super + T = Toggle Float
-
-Super + Y = Create Waybar
-
-Super + M = Disable Keybinds
+Shortcuts can be viewed in shorcuts.txt
 
 
 # To-Do
