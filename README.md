@@ -15,7 +15,7 @@ Shortcuts can be viewed in shorcuts.txt
 
 
 # To-Do
-* Create Quickshell GUI
-* Emacs customization
+* Shortcuts guide on startup (python?)
+* Test install script (problem with path creation)
 
 
